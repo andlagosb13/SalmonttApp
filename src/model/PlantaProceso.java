@@ -1,7 +1,7 @@
 package model;
 
 // PlantaProceso herede de UnidadOperativa
-public class PlantaProceso extends UnidadOperativa{
+public class PlantaProceso extends UnidadOperativa implements Registrable{
     // Atributo especifico
     private int capacidadProceso; // Podria ser en toneladas
 
@@ -34,5 +34,9 @@ public class PlantaProceso extends UnidadOperativa{
         super.mostrarInformacion();
         // Agrega la información específica y el salto de Linea final
         System.out.println(", Capacidad de Proceso: " + this.capacidadProceso + " Unidades/Dia]");
+    }
+    @Override
+    public void mostrarResumen(){
+        System.out.println("REGISTRO (PP): " + this.getNombre() + " (" + this.getComuna() + ")");
     }
 }
